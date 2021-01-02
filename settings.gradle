@@ -1,0 +1,3 @@
+include ':basicHelpers'
+include ':app'
+rootProject.name = "Basic Helpers"
