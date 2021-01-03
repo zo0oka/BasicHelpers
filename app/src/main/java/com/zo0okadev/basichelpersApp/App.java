@@ -1,7 +1,9 @@
-package com.zo0okadev.basichelpers;
+package com.zo0okadev.basichelpersApp;
 
 import android.app.Application;
 import android.content.Context;
+
+import androidx.multidex.MultiDex;
 
 /**
  * Created by Zo0okaDev (https://github.com/zo0oka)
@@ -12,7 +14,12 @@ public class App extends Application {
 
     @Override
     protected void attachBaseContext(Context base) {
-        BasicHelpers.init(this, 1, 0);
+        MultiDex.install(base);
         super.attachBaseContext(base);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
     }
 }
